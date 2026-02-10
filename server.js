@@ -11,11 +11,15 @@ app.use(express.json())
 
 app.use(cors())
 
-app.get('/', (req,res) =>{
+app.get('/', (req, res) => {
     res.send('hi')
 })
 
+app.get('/health', (req, res) => {
+    res.send('server is running')
+})
+
 const port = process.env.PORT
-app.listen(port, ()=>{
+app.listen(port, () => {
     console.log('server running');
 })
